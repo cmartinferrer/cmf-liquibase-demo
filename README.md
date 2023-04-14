@@ -5,6 +5,7 @@ Pretty simple example exercise using liquibase.
 ## Description
 The exercise consists of the following modules:
 - **liquibase-springboot:** This module create database data while springboot is starting.
+- **liquibase-maven:** This module create database data with maven plugin.
 
 
 ## Getting started
@@ -102,4 +103,16 @@ $ mysql> select * from DATABASECHANGELOGLOCK;
 1 row in set (0.01 sec)
 
 mysql>
+````
+
+### Executing liquibase-springboot-maven module
+
+1. Execute update:
+````
+$ mvn clean install -pl liquibase-maven -DskipTests liquibase:update
+````
+
+2. Execute rollback:
+````
+$ mvn clean install -pl liquibase-maven -DskipTests liquibase:rollback -Dliquibase.rollbackCount=1
 ````
