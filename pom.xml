@@ -12,13 +12,13 @@
     </parent>
 
     <groupId>cmf.liquibase</groupId>
-    <artifactId>cmf-liquibase</artifactId>
+    <artifactId>cmf-liquibase-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>liquibase-springboot</module>
-        <module>liquibase-maven</module>
+        <module>liquibase-springboot-demo</module>
+        <module>liquibase-maven-demo</module>
     </modules>
 
     <properties>

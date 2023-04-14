@@ -1,4 +1,4 @@
-package cmf.liquibase;
+package cmf.liquibase.maven.demo;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-# Learning Kafka Streams
+# Learning Liquibase
 
 Pretty simple example exercise using liquibase.
 
@@ -60,7 +60,7 @@ mysql>
 
 1. Run process:
 ````
-$ mvn compile exec:java -pl liquibase-springboot -Dexec.mainClass="cmf.liquibase.Main"
+$ mvn compile exec:java -pl liquibase-springboot-demo -Dexec.mainClass="cmf.liquibase.springboot.demo.Main"
 ````
 
 3. Check database
@@ -109,10 +109,11 @@ mysql>
 
 1. Execute update:
 ````
-$ mvn clean install -pl liquibase-maven -DskipTests liquibase:update
+$ mvn clean install -pl liquibase-maven-demo -DskipTests liquibase:update
 ````
 
-2. Execute rollback:
+2. Execute rollback (rollbackCount, rollbackTag, rollbackDate):
 ````
-$ mvn clean install -pl liquibase-maven -DskipTests liquibase:rollback -Dliquibase.rollbackCount=1
+$ mvn clean install -pl liquibase-maven-demo -DskipTests liquibase:rollback -Dliquibase.rollbackCount=1
 ````
+You can see the rollback options on the following website --> https://docs.liquibase.com/tools-integrations/maven/commands/maven-rollback.html
