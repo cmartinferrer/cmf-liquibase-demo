@@ -15,17 +15,17 @@ The exercise consists of the following modules:
 To launch a dev environment:
 1. Make sure you have docker and docker-compose installed.
 2. Go to project root directory and execute the following commnad:
-````
+```
 $ docker-compose up -d
-````
+```
 3. Check docker containers
-````
+```
 $ docker ps -a
 CONTAINER ID   IMAGE                              COMMAND                  CREATED          STATUS                    PORTS                                         NAMES
 dc2a151b2517   mysql:5.7                          "docker-entrypoint.s…"   16 seconds ago   Up 14 seconds             0.0.0.0:3306->3306/tcp, 33060/tcp             cmf-liquibase-db-1
-````
+```
 4. Check database
-````
+```
 $ docker exec -it cmf-liquibase-db-1 mysql -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -53,19 +53,23 @@ mysql> show databases;
 5 rows in set (0.04 sec)
 
 mysql>
-````
+```
 
 
 ### Executing liquibase-springboot module
 
 1. Run process:
-````
+```
 $ mvn compile exec:java -pl liquibase-springboot-demo -Dexec.mainClass="cmf.liquibase.springboot.demo.Main"
-````
+```
 If you're on Windows, you need to apply quotes for exec.mainClass and exec.args:
-````
+```
 $ mvn compile exec:java -pl liquibase-springboot-demo -D"exec.mainClass"="cmf.liquibase.springboot.demo.Main"
-````
+```
+In order to avoid IllegalThreadStateException warning, you can use the following argument: `-Dexec.cleanupDaemonThreads=false`
+```
+mvn compile exec:java -pl liquibase-springboot-demo -D"exec.mainClass"="cmf.liquibase.springboot.demo.Main" -D"exec.cleanupDaemonThreads"=false
+```
 
 
 3. Check database
