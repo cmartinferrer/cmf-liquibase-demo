@@ -62,6 +62,11 @@ mysql>
 ````
 $ mvn compile exec:java -pl liquibase-springboot-demo -Dexec.mainClass="cmf.liquibase.springboot.demo.Main"
 ````
+If you're on Windows, you need to apply quotes for exec.mainClass and exec.args:
+````
+$ mvn compile exec:java -pl liquibase-springboot-demo -D"exec.mainClass"="cmf.liquibase.springboot.demo.Main"
+````
+
 
 3. Check database
 ````
